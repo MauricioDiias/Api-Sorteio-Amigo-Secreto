@@ -7,7 +7,7 @@ const bancoDeDados = require("./bancoDeDados");
 app.use(express.json());
 
 app.post("/sorteio", (req, res, next) => {
-  console.log(req.body);
+  console.log(req.body.nomes);  
 
   res.send("sorteio efetuado");
 });

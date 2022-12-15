@@ -1,19 +1,10 @@
-let nomesRecebidos = [
-    'Ariane',
-    'Lyndi',
-    'Jamile',
-    'Erisson',
-    'Wedicarlos',
-    'Jairlaine',
-    'Rodrigo',
-    'Blenda',
-    'Raniele',
-    'Julio',
-    'Tawane',
-    'Jean',
-    'fabio',
-    'Mauricio',
-]
+const sequence = {
+    _id: 1,
+    get id() { return this._id++ }
+}
+
+let nomesRecebidos = []
+
 function embaralhar(arr) {
     arr.forEach((element, index) => {
         let aux = Math.floor(Math.random() * (index + 1));
@@ -33,5 +24,5 @@ function sortear() {
     })
     console.log(sorteados)
 }
-sortear()
+
 

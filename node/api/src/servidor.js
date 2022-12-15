@@ -18,12 +18,12 @@ app.post("/sorteio", (req, res, next) => {
 });
 
 
-// app.get('/lista',( req, res, next) => {
-//   res.send(bancoDeDados.getNomes())
-// })
-// app.get('/lista/:id', (req,res,next) => {
-//   res.send(bancoDeDados.getNome(req.params.id))
-// })
+app.get('/lista',( req, res, next) => {
+  res.send(bancoDeDados.getNomes())
+})
+app.get('/lista/:id', (req,res,next) => {
+  res.send(bancoDeDados.getNome(req.params.id))
+})
 app.listen(porta, () => {
   console.log(`Servidor executando na porta ${porta}`);
 });

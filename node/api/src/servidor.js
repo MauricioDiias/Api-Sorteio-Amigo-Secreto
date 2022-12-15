@@ -3,7 +3,7 @@ const porta = 3003;
 const express = require("express");
 const app = express();
 const bancoDeDados = require("./bancoDeDados");
-
+// const bodyParser = require('body-parser')
 app.use(express.json());
 
 app.post("/sorteio", (req, res, next) => {

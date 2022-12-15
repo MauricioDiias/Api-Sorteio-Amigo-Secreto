@@ -8,6 +8,7 @@ let nomesRecebidos = []
 function salvarNomes(nome) {
     if (!nome.id) nome.id = sequence.id
     nomesRecebidos[nome.id] = nome
+    sortear(nome)
     return nome
 }
 

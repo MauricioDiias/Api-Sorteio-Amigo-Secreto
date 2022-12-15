@@ -1,9 +1,18 @@
 let nomesRecebidos = [
-    'a',
-    'b',
-    'c',
-    'd',
-
+    'Ariane',
+    'Lyndi',
+    'Jamile',
+    'Erisson',
+    'Wedicarlos',
+    'Jairlaine',
+    'Rodrigo',
+    'Blenda',
+    'Raniele',
+    'Julio',
+    'Tawane',
+    'Jean',
+    'fabio',
+    'Mauricio',
 ]
 function embaralhar(arr) {
     arr.forEach((element, index) => {

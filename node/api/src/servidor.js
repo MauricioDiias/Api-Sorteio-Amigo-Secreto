@@ -6,21 +6,21 @@ const bancoDeDados = require('./bancoDeDados')
 
 app.get("/list", (req, res, next) => {
   res.send([
-    ["Ariane"],
-    ["Lyndi"],
-    ["Jamile"],
-    ["Erisson"],
-    ["Wedicarlos"],
-    ["Rodrigo"],
-    "Jairlaine",
-    "Blenda",
-    "Raniele",
-    "Julio",
-    "Tawane",
-    "Jean",
-    "fabio",
-    "Mauricio",
-  ]);
+    'Ariane',
+    'Lyndi',
+    'Jamile',
+    'Erisson',
+    'Wedicarlos',
+    'Jairlaine',
+    'Rodrigo',
+    'Blenda',
+    'Raniele',
+    'Julio',
+    'Tawane',
+    'Jean',
+    'fabio',
+    'Mauricio',
+]);
 });
 app.listen(porta, () => {
   console.log(`Servidor executando na porta ${porta}`);

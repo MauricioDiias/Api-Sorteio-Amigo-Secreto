@@ -8,13 +8,14 @@ app.use(express.json());
 
 app.post("/sorteio", (req, res, next) => {
   const sorteio = bancoDeDados.salvarNomes({
-    nomes: req.body.nomes,
+    nomes: req.body.nomes
   });
-  res.send(sorteio) //JSON
-
-  console.log(req.body);
-
-  res.send("sorteio efetuado");
+    let nomesSorteio = Object.values(sorteio)
+    
+    bancoDeDados.sortear(nomesSorteio)
+    console.log(nomesSorteio);
+    // res.send("sorteio efetuado");
+    res.send(nomesSorteio) //JSON
 });
 
 

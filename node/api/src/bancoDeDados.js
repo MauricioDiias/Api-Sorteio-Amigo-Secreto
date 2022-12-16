@@ -27,13 +27,13 @@ function embaralhar(arr) {
     });
 }
 
-function sortear() {
-    embaralhar(nomesRecebidos)
+function sortear(teste) {
+    embaralhar(teste)
     let sorteados = []
-    nomesRecebidos.forEach((element, index) => {
+    teste.map((element, index) => {
         sorteados.push([
-            nomesRecebidos[index],
-            nomesRecebidos[index != nomesRecebidos.length - 1 ? index + 1 : 0]
+            teste[index],
+            teste[index != teste.length - 1 ? index + 1 : 0]
         ])
     })
     console.log(sorteados)

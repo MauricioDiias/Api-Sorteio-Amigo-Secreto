@@ -21,10 +21,10 @@ function getNomes() {
   return nomesRecebidos;
 }
 // console.log(nomesRecebidos)
-function embaralhar(arr) {
-  arr.forEach((element, index) => {
+function embaralhar(teste) {
+  teste.forEach((element, index) => {
     let aux = Math.floor(Math.random() * (index + 1));
-    [arr[index], arr[aux]] = [arr[aux], arr[index]];
+    [teste[index], teste[aux]] = [teste[aux], teste[index]];
   });
 }
 
@@ -36,8 +36,10 @@ function sortear(teste) {
       teste[index],
       teste[index != teste.length - 1 ? index + 1 : 0],
     ]);
+    
   });
-  console.log(sorteados);
+  return sorteados
+  
 }
 
 module.exports = { salvarNomes, getNome, getNomes, sortear };

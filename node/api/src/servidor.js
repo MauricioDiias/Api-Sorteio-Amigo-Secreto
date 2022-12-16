@@ -6,6 +6,12 @@ const app = express();
 const bancoDeDados = require("./bancoDeDados");
 // const bodyParser = require('body-parser')
 
+app.use(
+  express.urlencoded({
+      extended:true,
+  }),
+)
+
 app.use(express.json());
 
 app.post("/sort", (req, res, next) => {
@@ -18,16 +24,11 @@ app.post("/sort", (req, res, next) => {
     return values;
   });
 
-  res.send(teste);
-  //  this.sortear(teste)
-  console.log(teste);
-  return { status: 200, data: sorteio }; //JSON
-});
+  res.send(bancoDeDados.sortear(teste));
 
-app.get("/ola", (req, res, netx) => {
-  const fabio = bancoDeDados.sortear(teste);
-  res.send(fabio);
-  return { status: 200, data: fabio }; //JSON
+  //  this.sortear(teste)
+  // console.log(teste);
+  return { status: 200, data: teste }; //JSON
 });
 
 app.get("/sortLista", (req, res, next) => {

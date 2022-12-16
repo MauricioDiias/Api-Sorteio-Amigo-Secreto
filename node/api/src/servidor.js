@@ -6,23 +6,27 @@ const bancoDeDados = require("./bancoDeDados");
 // const bodyParser = require('body-parser')
 app.use(express.json());
 
-app.post("/sorteio", (req, res, next) => {
+app.post("/sort", (req, res, next) => {
   const sorteio = bancoDeDados.salvarNomes({
     nomes: req.body.nomes
   });
     let nomesSorteio = Object.values(sorteio)
     
-    bancoDeDados.sortear(nomesSorteio)
-    console.log(nomesSorteio);
-    // res.send("sorteio efetuado");
-    res.send(nomesSorteio) //JSON
+    const teste = nomesSorteio[0].map((values) => {
+      return values;
+    })
+
+   res.send(teste)
+  //  this.sortear(teste)
+   console.log(teste)
+  return { status: 200, data: sorteio } //JSON
 });
 
 
-app.get('/lista',( req, res, next) => {
+app.get('/sortLista',( req, res, next) => {
   res.send(bancoDeDados.getNomes())
 })
-app.get('/lista/:id', (req,res,next) => {
+app.get('/sortLista/:id', (req,res,next) => {
   res.send(bancoDeDados.getNome(req.params.id))
 })
 app.listen(porta, () => {

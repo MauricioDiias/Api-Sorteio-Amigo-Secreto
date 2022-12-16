@@ -26,9 +26,13 @@ app.post("/sort", (req, res, next) => {
 
   res.send(bancoDeDados.sortear(teste));
 
-  //  this.sortear(teste)
-  // console.log(teste);
   return { status: 200, data: teste }; //JSON
+});
+
+app.get("/ola", (req, res, next) => {
+  res.send(bancoDeDados.sortear(teste));
+  return { status: 200, data: teste }; //JSON
+
 });
 
 app.get("/sortLista", (req, res, next) => {

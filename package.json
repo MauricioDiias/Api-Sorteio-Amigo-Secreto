@@ -1,0 +1,24 @@
+{
+  "name": "api-sorteio-amigo-secreto",
+  "version": "1.0.0",
+  "description": "<h6 style=\"cursor:pointer\">\r Dar o comando <i>npm init</i> para criar o package.JSON <br>\r em seguida o comando <i>npm i --save express</i><br>\r Ultilizei <i>npm i --save-dev nodemon</i> nas dependência do projeto.<br>\r para rodar o prpejeto na pasta srco comando<i> npm start </i>\r </h6>\r <br> --- <br>\r Fábio Cypriano <br>\r Mauricio Dias",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MauricioDiias/Api-Sorteio-Amigo-Secreto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MauricioDiias/Api-Sorteio-Amigo-Secreto/issues"
+  },
+  "homepage": "https://github.com/MauricioDiias/Api-Sorteio-Amigo-Secreto#readme",
+  "devDependencies": {
+    "express": "^4.18.2",
+    "nodemailer": "^6.8.0"
+  }
+}

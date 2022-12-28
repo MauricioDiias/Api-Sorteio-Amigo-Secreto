@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyparser = require("body-parser");
 const morgan = require("morgan");
+
 const rotaV2Sorteio = require("./routes/--v2Sorteio");
 const rotaV3Sorteio = require("./routes/--v3Sorteio");
 
@@ -17,8 +18,10 @@ app.use((req, res, next) => {
   );
   next();
 });
+//Rotas
 app.use("/v2-sorteio", rotaV2Sorteio);
 app.use("/v3-sorteio", rotaV3Sorteio);
+
 //Quando não encontra a rota
 app.use((req, res, next) => {
   const erro = new Error("Não encontrado!");

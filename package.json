@@ -4,6 +4,7 @@
   "description": "<h6 style=\"cursor:pointer\">\r Dar o comando <i>npm init</i> para criar o package.JSON <br>\r em seguida o comando <i>npm i --save express</i><br>\r Ultilizei <i>npm i --save-dev nodemon</i> nas dependência do projeto.<br>\r para rodar o prpejeto na pasta srco comando<i> npm start </i>\r </h6>\r <br> --- <br>\r Fábio Cypriano <br>\r Mauricio Dias",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server/server.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,9 @@
   },
   "homepage": "https://github.com/MauricioDiias/Api-Sorteio-Amigo-Secreto#readme",
   "devDependencies": {
+    "body-parser": "^1.20.1",
     "express": "^4.18.2",
+    "morgan": "^1.10.0",
     "nodemailer": "^6.8.0"
   }
 }

@@ -14,5 +14,5 @@ npm instal
 
 
 ```md
-![Anurag's GitHub stats](https://github.com/MauricioDiias/Api-Sorteio-Amigo-Secreto)
+    https://github.com/MauricioDiias/Api-Sorteio-Amigo-Secreto
 ```

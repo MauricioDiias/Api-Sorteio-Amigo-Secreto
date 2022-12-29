@@ -2,12 +2,13 @@ const express = require("express");
 const app = express();
 const bodyparser = require("body-parser");
 const morgan = require("morgan");
+const cors = require("cors");
 
 const rotaV2Sorteio = require("./routes/--v2Sorteio");
 const rotaV3Sorteio = require("./routes/--v3Sorteio");
 
 app.use(morgan("dev"));
-app.use(bodyparser.urlencoded({ extended: false })); //apenas dados simples
+app.use(bodyparser.urlencoded({ extended: true })); //apenas dados simples
 app.use(bodyparser.json()); // json de entrada no body
 
 app.use((req, res, next) => {

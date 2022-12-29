@@ -6,13 +6,14 @@ const cors = require("cors");
 
 const rotaV2Sorteio = require("./routes/--v2Sorteio");
 const rotaV3Sorteio = require("./routes/--v3Sorteio");
-
+app.use(cors())
 app.use(morgan("dev"));
-app.use(bodyparser.urlencoded({ extended: true })); //apenas dados simples
+app.use(bodyparser.urlencoded({ extended: false })); //apenas dados simples
 app.use(bodyparser.json()); // json de entrada no body
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Headers', 'Content-Type')
   res.header(
     "Access-Control-Allow-Header",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"

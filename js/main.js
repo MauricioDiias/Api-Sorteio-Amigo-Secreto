@@ -11,12 +11,13 @@ const bullet = document.querySelectorAll(".step .bullet");
 /******************************************** */
 /**ROTA */
 /* -------------------------------- */
-const rota = "http://localhost:5000/nomes-sortados";
+const rota = "http://localhost:5001/v2-sorteio";
 /* -------------------------------- */
 async function getApi(listaDeUsuarios) {
   try {
     let header = new Headers({
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+  
     });
     let request = await fetch(rota, {
       method: "POST",

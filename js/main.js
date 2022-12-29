@@ -9,6 +9,41 @@ const progressText = document.querySelectorAll(".step p")
 const progressCheck = document.querySelectorAll(".step .check")
 const bullet = document.querySelectorAll(".step .bullet")
 /******************************************** */
+/**ROTA */
+/* -------------------------------- */
+const rota = "http://localhost:5001/v2-sorteio";
+/* -------------------------------- */
+async function getApi(nomes) {
+  try {
+    let header = new Headers({
+      "Content-Type": "application/json",
+    });
+    let request = await fetch(rota, {
+      method: "POST",
+      headers: header,
+      body: JSON.stringify({ listaDeUsuarios}),
+    });
+    request
+      .json()
+      .then((sorteados) => {
+        let printTela = document.getElementById("lista-one");
+        printTela.innerHTML = "";
+        printTela.innerHTML +=Object.values(sorteados)
+        .map(
+            (i) =>console.log('i',i)
+              `<div class="caixa-box name-2"><h3>${i.nome}</h3></div>`
+          )
+          .join(" ");
+      })
+      .catch((err) => console.log("err=", err));
+  } catch (error) {
+    console.log("eror");
+  }
+}
+async function imprimirNaTela() {
+  await getApi(participantes);
+}
+/* -------------------------------- */
 let max = 4
 let current = 1
 
@@ -25,6 +60,7 @@ avancarBtn.addEventListener("click", (e) => {
   printNomeDoSorteio.innerHTML = nomeDoSorteio.value
   limparInputOne()
 })
+
 
 sortear.addEventListener("click", (e) => {
   e.preventDefault()
@@ -85,41 +121,6 @@ function excuir(a) {
   renderizar();
 }
 /******************************************************** */
-/**ROTA */
-/* -------------------------------- */
-const rota = "http://localhost:5000/nomes-sortados";
-/* -------------------------------- */
-async function getApi(nomes) {
-  try {
-    let header = new Headers({
-      "Content-Type": "application/json",
-    });
-    let request = await fetch(rota, {
-      method: "POST",
-      headers: header,
-      body: JSON.stringify({ nomes}),
-    });
-    request
-      .json()
-      .then((sorteados) => {
-        let printTela = document.getElementById("lista-one");
-        printTela.innerHTML = "";
-        printTela.innerHTML +=Object.values(sorteados)
-        .map(
-            (i) =>console.log('i',i)
-              `<div class="caixa-box name-2"><h3>${i.nome}</h3></div>`
-          )
-          .join(" ");
-      })
-      .catch((err) => console.log("err=", err));
-  } catch (error) {
-    console.log("eror");
-  }
-}
-async function imprimirNaTela() {
-  await getApi(participantes);
-}
-/* -------------------------------- */
 
 const btnAdicionar = document.querySelector("#adicionar");
 let participantes = [];

@@ -1,11 +1,12 @@
-// require("dotenv").config();
-
-// const rota = process.env.ROTA_V3;
-
+// /**ROTA */
+// /* -------------------------------- */
+// const rota = "http://localhost:5001/v3-sorteio";
+// /* -------------------------------- */
 // async function getApi(listaDeUsuarios) {
 //   try {
 //     let header = new Headers({
-//       "Content-Type": "application/json",
+//     "Content-Type": "application/json",
+  
 //     });
 //     let request = await fetch(rota, {
 //       method: "POST",
@@ -26,4 +27,3 @@
 //   await getApi(participantes);
 // }
 // /* -------------------------------- */
-// module.exports = { imprimirNaTela };

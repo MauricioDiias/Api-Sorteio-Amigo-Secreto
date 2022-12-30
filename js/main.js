@@ -1,3 +1,4 @@
+/* -------------ANIMAÇÕES ------*/
 const slidePage = document.querySelector(".slidepage");
 const avancarBtn = document.querySelector(".nextbtn");
 const Voltar = document.querySelector(".prev-1");
@@ -7,10 +8,11 @@ const nextBtnSec2 = document.querySelector(".next-2");
 const progressText = document.querySelectorAll(".step p");
 const progressCheck = document.querySelectorAll(".step .check");
 const bullet = document.querySelectorAll(".step .bullet");
-
+/******************************************** */
+/**ROTA */
+/* -------------------------------- */
 const rota = "http://localhost:5001/v3-sorteio";
 /* -------------------------------- */
-
 async function getApi(listaDeUsuarios) {
   try {
     let header = new Headers({
@@ -26,7 +28,17 @@ async function getApi(listaDeUsuarios) {
     request
       .json()
       .then((sorteados) => {
-        console.log(sorteados)
+        // let printTela = document.getElementById("lista-one");
+        // printTela.innerHTML = "";
+        // printTela.innerHTML += Object.values(sorteados)
+        //   .map(
+        //     (i) =>
+        //       console.log(
+        //         "i",
+        //         i
+        //       )`<div class="caixa-box name-2"><h3>${i.nome}</h3></div>`
+        //   )
+        //   .join(" ");
       })
       .catch((err) => console.log("err=", err));
   } catch (error) {

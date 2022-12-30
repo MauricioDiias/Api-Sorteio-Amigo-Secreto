@@ -19,7 +19,7 @@ body {
     background: white;
     border-radius: 7px;
     text-align: center;
-    padding: 50px 35px;
+    padding: 50px 8px;
 }
 
 .container header {
@@ -52,7 +52,7 @@ body {
 
 .form-outer form .page .field {
     height: 45px;
-    width: 330px;
+    /* width: 330px; */
     margin: 44px 0;
 }
 
@@ -79,7 +79,7 @@ body {
 }
 
 .form-outer form .page .field button {
-    width: 100%;
+    width: 90%;
     height: calc(100% + 0px);
     margin-top: -20px;
     border: none;

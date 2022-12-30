@@ -1,4 +1,3 @@
-/* -------------ANIMAÇÕES ------*/
 const slidePage = document.querySelector(".slidepage");
 const avancarBtn = document.querySelector(".nextbtn");
 const Voltar = document.querySelector(".prev-1");
@@ -8,11 +7,10 @@ const nextBtnSec2 = document.querySelector(".next-2");
 const progressText = document.querySelectorAll(".step p");
 const progressCheck = document.querySelectorAll(".step .check");
 const bullet = document.querySelectorAll(".step .bullet");
-/******************************************** */
-/**ROTA */
-/* -------------------------------- */
+
 const rota = "http://localhost:5001/v3-sorteio";
 /* -------------------------------- */
+
 async function getApi(listaDeUsuarios) {
   try {
     let header = new Headers({

@@ -31,7 +31,7 @@ function sendEmail(destinatarioEmail, destinatarioNome, remetendeteNome) {
     <h2>Botdesigner</h2>
     <h3>Sorteador de Amigo Secreto</h3>
     <p>Olá ${destinatarioNome} você participou no sorteio do amigo secreto!</p>
-    <a  href="http://127.0.0.1:5501/resultado.html?${token}">
+    <a  href="https://0207-186-212-60-214.ngrok.io?${token}">
         <button
           style="
             color: #fff;

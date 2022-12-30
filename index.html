@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <title>presente</title>
+    <title>Sorteio Realizado</title>
 
 </head>
 
@@ -15,36 +15,24 @@
     <div class="container">
         <header>Amigo Secreto</header>
         <div class="progress-bar">
-            <div class="step">
+            <!-- <div class="step">
                 <p></p>
                 <div class="bullet">
                     <span>1</span>
                 </div>
                 <div class="check fas fa-check"></div>
-            </div>
-            <div class="step">
-                <p></p>
-                <div class="bullet">
-                    <span>2</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <div class="step">
-                <p></p>
-                <div class="bullet">
-                    <span>3</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
+            </div> -->
             
         </div>
         <div class="form-outer">
             <form action="#">
                 <div class="page slidepage">
-                    <div class="title">Nome do Sorteio:</div>
+                    <div class="title">Você tirou:</div>
                     <div class="field">
                         <div class="label"></div>
-                        <input type="name" name="avancar" id="input-one">
+                        <h1 id="nome-sorteado">
+                            
+                        </h1>
                     </div>
                     <div class="field nextbtn">
                         <button>Avançar</button>
@@ -52,37 +40,19 @@
                    
                 </div>
 
+            
                 <div class="page">
-                    <div id="nome-sorteio"></div>
-                    <div class="title">Cadastro:</div>
-                    <div class="field">
-                        <div class="label">Nome:</div>
-                        <input type="name" name="avancar" id="input-dados">
-                    </div>
-                    <div class="field">
-                        <div class="label">E-mail:</div>
-                        <input type="name" name="avancar" id="input-email">
-                    </div>
-                    <div class="field btns">
-                        <button class="prev-1 prev"               >Voltar</button>
-                        <button class="prev-1 prev" id="adicionar">Adicionar</button>
-                        <button class="next-1 next" id="btn-sortear">Sortear</button>
-                    </div>
-                    <div id="quadro-lista" class="list-int"></div>
-                   
-                </div>
-                <div class="page">
-                    <div class="title">RESULTADO: mensagem de confirmação</div>
+                    <!-- <div class="title">RESULTADO: mensagem de confirmação</div> -->
                     <!-- <div class="field">
                         <div class="label">firs name</div>
-                    </div>
-                    <div class="field">
-                        <div class="label">firs name</div>
-                    </div> -->
-                    <div class="field btns">
+                    </div>-->
+                    <div class="field-okay">
+                        <img src="/css/okay.gif" alt="Okay">
+                    </div> 
+                    <!-- <div class="field btns">
                         <button class="prev-2 prev">previus</button>
                         <button class="next-2 next">next</button>
-                    </div>
+                    </div> -->
                     
                    
                 </div>
@@ -93,6 +63,35 @@
 
 
 <script src="/js/main.js"></script>
+
+<script>
+    let printNomeDoSorte = document.getElementById("nome-sorteado");
+
+    let url_atual = window.location.href;
+    let token = url_atual.slice(37);
+    console.log(token);
+    let result;
+    parseJwt(token);
+    function parseJwt(token) {
+      var base64Url = token.split(".")[1];
+      var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+      var jsonPayload = decodeURIComponent(
+        window
+          .atob(base64)
+          .split("")
+          .map(function (c) {
+            return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+          })
+          .join("")
+      );
+
+      result = JSON.parse(jsonPayload);
+      return result;
+    }
+    printNomeDoSorte.innerHTML = result.nome;
+
+    console.log(result.nome);
+  </script>
 </body>
 
 </html>

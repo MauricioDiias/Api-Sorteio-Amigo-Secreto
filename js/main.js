@@ -11,7 +11,7 @@ const bullet = document.querySelectorAll(".step .bullet");
 /******************************************** */
 /**ROTA */
 /* -------------------------------- */
-const rota = "http://localhost:5001/v2-sorteio";
+const rota = "http://localhost:5001/v3-sorteio";
 /* -------------------------------- */
 async function getApi(listaDeUsuarios) {
   try {
@@ -28,17 +28,7 @@ async function getApi(listaDeUsuarios) {
     request
       .json()
       .then((sorteados) => {
-        let printTela = document.getElementById("lista-one");
-        printTela.innerHTML = "";
-        printTela.innerHTML += Object.values(sorteados)
-          .map(
-            (i) =>
-              console.log(
-                "i",
-                i
-              )`<div class="caixa-box name-2"><h3>${i.nome}</h3></div>`
-          )
-          .join(" ");
+        console.log(sorteados)
       })
       .catch((err) => console.log("err=", err));
   } catch (error) {

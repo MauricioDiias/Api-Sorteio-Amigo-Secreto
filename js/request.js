@@ -26,4 +26,5 @@
 // async function imprimirNaTela() {
 //   await getApi(participantes);
 // }
+
 // /* -------------------------------- */

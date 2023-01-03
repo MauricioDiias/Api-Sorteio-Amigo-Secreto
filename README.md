@@ -1,5 +1,5 @@
 
-# Serviço de que realiza sorteio de Amigo Secreto 
+# Serviço que realiza sorteio de Amigo Secreto 
 
 Para inicializar o serviço.
 

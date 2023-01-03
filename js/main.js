@@ -57,13 +57,18 @@ let printNomeDoSorteio = document.getElementById("nome-sorteio");
 
 avancarBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  slidePage.style.marginLeft = "-25%";
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  current += 1;
+  if(nomeDoSorteio.value == ""){
+    alert("coloque o nome do sorteio.")
+  }else {
 
-  printNomeDoSorteio.innerHTML = nomeDoSorteio.value;
-  limparInputOne();
+    slidePage.style.marginLeft = "-25%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    current += 1;
+  
+    printNomeDoSorteio.innerHTML = nomeDoSorteio.value;
+    nomeDoSorteio.value = ""
+  }
 });
 
 sortear.addEventListener("click", (e) => {
@@ -102,10 +107,10 @@ prevBtnSec2.addEventListener("click", (e) => {
 /********************************************************* */
 
 /**limpar Inputs */
-function limparInputOne() {
-  let input = document.getElementById("input-one");
-  input.value = "";
-}
+// function limparInputOne() {
+//   let input = document.getElementById("input-one");
+//   input.value = "";
+// }
 /********************************************************* */
 function limparInput() {
   let limpaInputNome = document.getElementById("input-dados");

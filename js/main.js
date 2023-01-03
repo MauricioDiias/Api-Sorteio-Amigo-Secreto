@@ -93,10 +93,11 @@ Voltar.addEventListener("click", (e) => {
 
 prevBtnSec2.addEventListener("click", (e) => {
   e.preventDefault();
-  slidePage.style.marginLeft = "-25%";
-  bullet[current - 2].classList.remove("active");
-  progressCheck[current - 2].classList.remove("active");
-  current -= 1;
+  window.location.reload(true)
+  // slidePage.style.marginLeft = "-25%";
+  // bullet[current - 2].classList.remove("active");
+  // progressCheck[current - 2].classList.remove("active");
+  // current -= 1;
 });
 /********************************************************* */
 

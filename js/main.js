@@ -16,30 +16,17 @@ const rota = "http://localhost:5001/v3-sorteio";
 async function getApi(listaDeUsuarios) {
   try {
     let header = new Headers({
-    "Content-Type": "application/json",
-  
+      "Content-Type": "application/json",
     });
     let request = await fetch(rota, {
       method: "POST",
       headers: header,
       body: JSON.stringify({ listaDeUsuarios }),
     });
-    console.log(header)
+    console.log(header);
     request
       .json()
-      .then((sorteados) => {
-        // let printTela = document.getElementById("lista-one");
-        // printTela.innerHTML = "";
-        // printTela.innerHTML += Object.values(sorteados)
-        //   .map(
-        //     (i) =>
-        //       console.log(
-        //         "i",
-        //         i
-        //       )`<div class="caixa-box name-2"><h3>${i.nome}</h3></div>`
-        //   )
-        //   .join(" ");
-      })
+      .then((sorteados) => {})
       .catch((err) => console.log("err=", err));
   } catch (error) {
     console.log("eror");
@@ -57,26 +44,34 @@ let printNomeDoSorteio = document.getElementById("nome-sorteio");
 
 avancarBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  if(nomeDoSorteio.value == ""){
-    alert("coloque o nome do sorteio.")
-  }else {
-
+  if (nomeDoSorteio.value == "") {
+    alert("coloque o nome do sorteio.");
+  } else {
     slidePage.style.marginLeft = "-25%";
     bullet[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
     current += 1;
-  
+
     printNomeDoSorteio.innerHTML = nomeDoSorteio.value;
-    nomeDoSorteio.value = ""
+    nomeDoSorteio.value = "";
   }
 });
 
+
 sortear.addEventListener("click", (e) => {
   e.preventDefault();
-  slidePage.style.marginLeft = "-50%";
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  current += 1;
+  if (participantes.length >= 2) {
+    console.log("oi cliquei");
+    imprimirNaTela();
+    slidePage.style.marginLeft = "-50%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    current += 1;
+  } else if (participantes.length == 1) {
+    alert("[ERRO] Não dar para jogar sozinho");
+  } else {
+    alert("[ERRO] Insira os Participantes");
+  }
 });
 
 nextBtnSec2.addEventListener("click", (e) => {
@@ -98,19 +93,12 @@ Voltar.addEventListener("click", (e) => {
 
 prevBtnSec2.addEventListener("click", (e) => {
   e.preventDefault();
-  window.location.reload(true)
+  window.location.reload(true);
   // slidePage.style.marginLeft = "-25%";
   // bullet[current - 2].classList.remove("active");
   // progressCheck[current - 2].classList.remove("active");
   // current -= 1;
 });
-/********************************************************* */
-
-/**limpar Inputs */
-// function limparInputOne() {
-//   let input = document.getElementById("input-one");
-//   input.value = "";
-// }
 /********************************************************* */
 function limparInput() {
   let limpaInputNome = document.getElementById("input-dados");
@@ -174,8 +162,3 @@ function renderizar() {
     )
     .join("");
 }
-const btnSortear = document.getElementById("btn-sortear");
-btnSortear.addEventListener("click", () => {
-  console.log("oi cliquei");
-  imprimirNaTela()
-});
